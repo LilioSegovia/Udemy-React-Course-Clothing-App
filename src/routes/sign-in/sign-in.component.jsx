@@ -1,27 +1,23 @@
 import {
-    signInWithGooglePopup,
-    createUserDocumentFromAuth,
-    signInWithGoogleRedirect
-  } from '../../utils/firebase/firebase.utils';
-  
-  const SignIn = () => {
-    const logGoogleUser = async () => {
-      const { user } = await signInWithGooglePopup();
-      const userDocRef = await createUserDocumentFromAuth(user);
-    };
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
 
-        const logGoogleRedirectUser = async () => {
-          const { user } = await signInWithGoogleRedirect();
-        };
+import SignUpForm from "../../Components/sign-up-form/sign-up-form.component";
 
-
-    return (
-      <div>
-        <h1>Sign In Page</h1>
-        <button onClick={logGoogleUser}>Sign in with Google Popup</button>
-        <button onClick={logGoogleRedirectUser}>Sign in with Google Redirect</button>
-      </div>
-    );
+const SignIn = () => {
+  const logGoogleUser = async () => {
+    const { user } = await signInWithGooglePopup();
+    const userDocRef = await createUserDocumentFromAuth(user);
   };
-  
-  export default SignIn;
+
+  return (
+    <div>
+      <h1>Sign In Page</h1>
+      <button onClick={logGoogleUser}>Sign in with Google Popup</button>
+      <SignUpForm/>
+    </div>
+  );
+};
+
+export default SignIn;
