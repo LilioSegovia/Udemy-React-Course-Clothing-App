@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -14,8 +15,9 @@ const firebaseConfig = {
   projectId: "clothingapp-73879",
   storageBucket: "clothingapp-73879.appspot.com",
   messagingSenderId: "981151443745",
-  appId: "1:981151443745:web:9f6a35b4594fd44ed4ac60",
+  appId: "1:981151443745:web:9f6a35b4594fd44ed4ac60"
 };
+
 
 const firebaseApp = initializeApp(firebaseConfig);
 
@@ -66,4 +68,10 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
 
   return await createUserWithEmailAndPassword(auth, email, password);
+};
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+
+  return await signInWithEmailAndPassword(auth, email, password);
 };
