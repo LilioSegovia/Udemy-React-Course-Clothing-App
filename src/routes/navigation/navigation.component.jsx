@@ -8,7 +8,7 @@ import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/card.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
-import "./navigation.styles.scss";
+import {NavigationContainer} from "./navigation.styles";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext)
