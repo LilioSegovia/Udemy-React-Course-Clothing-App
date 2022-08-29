@@ -6,6 +6,8 @@ import {
   removeItemFromCart,
 } from "../../store/cart/cart.action";
 
+//import PaymentForm from "../payment-form/payment-form.component";
+
 import "./checkout-item.styles";
 import {
   BaseSpan,
@@ -39,6 +41,7 @@ const CheckoutItem = ({ cartItem }) => {
       </Quantity>
       <BaseSpan>{price}</BaseSpan>
       <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
+    { /* <PaymentForm/> */}
     </CheckoutItemContainer>
   );
 };
